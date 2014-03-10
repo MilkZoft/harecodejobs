@@ -4,6 +4,8 @@
 var express = require('express'),
     http = require('http'),
     path = require('path'),
+    stylus = require('stylus'),
+    nib = require('nib'),
     hare = express();
 
 require('./system/prototype');
@@ -27,6 +29,7 @@ hare.use(express.urlencoded());
 hare.use(express.methodOverride());
 hare.use(hare.router);
 hare.use(express.static(path.join(__dirname, 'public')));
+hare.use(express.favicon(path.join(__dirname, 'public/themes/codejobs/images/favicon.png')));
 
 // Development only
 if (hare.get('env') == 'development') {
@@ -82,7 +85,7 @@ hare.use(function(req, res, next) {
       }
 
       try {
-        if (controller != 'favicon.ico') {
+        if (!global.config.server.files.filter.inArray(controller)) {
           exe = require('./controllers/' + controller);
           exe[action](params);
         }

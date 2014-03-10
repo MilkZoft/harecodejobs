@@ -1,0 +1,37 @@
+footer#footer
+  .footer-copyright
+    .container
+      .row
+        .span1
+          a(href="href", class="logo")
+            img(alt="Porto Website Template", src="/themes/codejobs/images/logo-footer.png")
+        
+        .span7
+          p
+            a(href="http://creativecommons.org/licenses/by/3.0/", target="_blank") Creative Commons Attribution 3.0 License
+            a(href="http://www.milkzoft.com", target="_blank") MilkZoft
+        
+        .span4
+          .social-icons
+            ul.social-icons
+              li.facebook
+                a(href="http://www.facebook.com/codejobs", target="_blank", data-placement="bottom", rel="tooltip", title="Facebook") Facebook
+              li.twitter
+                a(href="http://www.twitter.com/codejobs", target="_blank", data-placement="bottom", rel="tooltip", title="Twitter") Twitter
+              li.youtube
+                a(href="http://www.youtube.com/codejobs", target="_blank", data-placement="bottom", rel="tooltip", title="Youtube") Youtube
+    
+    //script(src="/js/core.js")
+    
+    //script
+      | addEventListener("load", prettyPrint, false);
+    
+    #fb-root
+    script
+      | (function(d, s, id) {
+      |  var js, fjs = d.getElementsByTagName(s)[0];
+      |  if (d.getElementById(id)) return;
+      |  js = d.createElement(s); js.id = id;
+      |  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=681100985238445";
+      |  fjs.parentNode.insertBefore(js, fjs);
+      | }(document, "script", "facebook-jssdk"));

@@ -31,6 +31,11 @@ var config = {
   
   server: {
     environment: 'local',
+    files: {
+      filter: [
+        'favicon.ico', 'img', 'js', 'images', 'stylesheets', 'css', 'themes'
+      ]
+    },
     debug: true
   },
 
