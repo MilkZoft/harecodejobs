@@ -20,6 +20,21 @@ hare.set('port', process.env.PORT || 3000);
 hare.set('views', path.join(__dirname, 'views'));
 hare.set('view engine', global.config.site.html.engine);
 
+if (global.config.site.html.engine === 'handlebars') {
+  var exphbs = require('express3-handlebars');
+  
+  hbs = exphbs.create({});
+  
+  hare.engine('handlebars', exphbs({
+    extname: '.hbs',
+    defaultLayout: global.config.site.html.defaultLayout
+  }));
+  
+  if (global.config.site.html.cache) {
+    hare.enable('view cache');
+  }
+}
+
 hare.locals = global.config;
 hare.locals.pretty = !global.config.site.html.minify;
 

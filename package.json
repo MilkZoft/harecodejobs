@@ -10,6 +10,7 @@
     "jade": "*",
     "stylus": "*",
     "nib": "*",
-    "mysql": "*"
+    "mysql": "*",
+    "express3-handlebars": "*",
   }
 }

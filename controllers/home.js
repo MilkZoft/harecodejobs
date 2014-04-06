@@ -8,14 +8,6 @@ var input = require('../system/helpers/input'),
 module.exports = {
   index: function(params)
   {
-    if (input.isPost()) {
-      if (!input.has('password')) {
-        console.log('Falta el password');
-      }
-
-      users.save(input.all());
-    }
-
-    global.res.render('home/index');
+    global.res.render('home/index', {title: 'CodeJobs', name: 'Carlos'});
   }
 };

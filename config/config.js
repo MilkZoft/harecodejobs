@@ -14,8 +14,10 @@ var config = {
     language: 'en',
     theme: 'default',
     html: {
-      engine: 'jade',
-      minify: true
+      engine: 'handlebars',
+      defaultLayout: 'main',
+      minify: true,
+      cache: false
     }
   },
   
